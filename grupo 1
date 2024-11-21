@@ -1,0 +1,46 @@
+ create database grupo1;
+
+use grupo1;
+
+
+create table veiculo (
+ id int primary key not null auto_increment,
+ placa varchar (255) not null,
+ modelo varchar(255) not null,
+ ano varchar (255),
+ cor varchar (255) not null
+);
+
+
+create table cliente (
+ id int primary key not null auto_increment,
+ nome varchar (255) not null,
+ telefone varchar(255) not null,
+email varchar (255) not null
+);
+
+create table mecanico (
+ id int primary key not null auto_increment,
+ nome varchar (255) not null,
+ especialidade varchar(255) not null
+);
+
+create table servico(
+ id int primary key not null auto_increment,
+ descricao varchar (255) not null,
+ preco varchar(255) not null
+);
+
+create table ordem_servico (
+ id int primary key not null auto_increment,
+ veiculo_id varchar (255) not null,
+ cliente_id varchar(255) not null,
+data_abertura datetime,
+disponivel varchar (255)  not null 
+);
+
+insert into  veiculo (placa, modelo ,ano, cor) values ("ABC-1234", "Fiesta", "2018","prata" );
+insert into  cliente (nome, telefone) values ("Carlos", "123456789" );
+insert into  mecanico (nome, especialidade) values ("João", "Motor" );
+insert into  servico (descricao, preco) values ("Troca de óleo", "150.00" );
+select * from cliente;
